@@ -3,7 +3,11 @@ use std::{thread, time};
 fn render(arr: [[i32; 30]; 20]){
     for row in arr.iter().rev(){
         for val in row.iter(){
-            print!("{}", val)
+            if *val == 0 {
+                print!(" ");
+            }else{
+                print!(".");
+            }
         }
         println!("")
     }
@@ -19,7 +23,7 @@ fn main() {
     println!("Hello, world!");
     let mut arr: [[i32; 30]; 20] = [[0;30];20];
     let p1 = Point{x:1, y:5};
-    let p2 = Point{x:15, y:9};
+    let p2 = Point{x:25, y:0};
     let dx = (p1.x - p2.x).abs();
     let dy = (p1.y - p2.y).abs();
 
